@@ -40,6 +40,28 @@ console.log("rpsPrompt:  : " + rpsPrompt);
  } // end forloop on rpsPrompp array
   
 
+function domPrompt(msg) {
+	//crfeate a dive elementFromPoint
+	// set content of div element to the msg   
+	// append the divew to the body
+	// document.body.appendchild(newElement)
+	
+	var div=document.createElement('div');
+	div.innerHTML=msg;
+	div.onclick= function(evt){
+	};
+	
+	document.body.appendChild(div);
+	}
 
 
 
+function domAlert(msg) {
+	var div = document.createElement('div');
+	div.innerHTML=msg;
+	div.setAttribute('class', 'alert_clas');
+	document.body.appendChild(div);
+	
+}
+
+domPrompt("tdimp promptest dom prompt");
