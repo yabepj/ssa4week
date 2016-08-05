@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<p id="demo">Instagram stuff </p>
+ 
+		<select id="personId">
+          <option value="Alice" >Alice</option>
+          <option value="Bob" >Bob</option>
+          <option value="Carol" >Carol</option>
+          <option value="David">David</option>
+        </select> 
+
+		<button type="button"
+		  onclick="loadDoc()"> Submit
+		</button> 
+		
+	
+<div id="personImages">
+<img src="http://localhost:8080/images/cat1.jpg" alt="Couldn't find image" style="width:304px;height:228px;">
+</div>	
+		
+ 
+ 
+<script>
+
+console.log('personID:  ' + document.getElementById("personId").value );
+
+
+function loadDoc() {
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+     //document.getElementById("demo").innerHTML = xhttp.responseText;
+      // parse responseText
+	  var myArr = JSON.parse(xhttp.responseText);
+        console.log('myArr:  '  +  JSON.stringify(myArr));
+
+
+
+/*		
+		var ul = document.createElement('ul');
+		for (var i in data) { 
+		  var li= document.createElement('li');
+		  li.innerHTML-data[i];
+		  ul.appendChild(li);
+		  
+		}
+		document.body.appendChild(ul);
+*/   
+ 
+      
+    }
+  };
+//  xhttp.open("GET", 'http://www.omdbapi.com/?t=batman&y=&plot=short&r=json', true);
+  xhttp.open("GET",  'http://localhost:8080/'+document.getElementById("personId").value, true)
+  xhttp.send();
+}
+ 
+</script>
+</body>
+
+    </html>

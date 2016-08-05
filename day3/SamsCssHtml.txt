@@ -1,0 +1,51 @@
+
+
+<div class="container">
+
+  <div class="one"> Hello</div>
+
+  <div class="two"> Boss </div>
+
+</div>
+
+CSS
+
+.container {
+
+  width: 300px;
+
+  height: 200px;
+
+  background: yellow;
+
+}
+
+​
+
+.one {
+
+   background: blue;
+
+   width: 50px;
+
+   color: green;
+
+   display: inline-block;
+
+   height: 50px;
+
+}
+
+.two {
+
+   background: red;
+
+   width: 50px;
+
+   color: green;
+
+   display: inline-block;
+
+   height: 100px;
+
+}
